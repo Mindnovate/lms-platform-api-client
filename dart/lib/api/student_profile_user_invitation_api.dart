@@ -1,0 +1,271 @@
+part of swagger.api;
+
+
+
+class StudentProfileUserInvitationApi {
+  final ApiClient apiClient;
+
+  StudentProfileUserInvitationApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
+
+  /// Allows user to send an invitation to manage a student in a teaching class with a given invitation code.
+  ///
+  /// 
+  Future apiAuthV1StudentProfileUserInvitationPost() async {
+    Object postBody = null;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/api/auth/v1/student-profile-user-invitation".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["apiKey"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return
+          ;
+    } else {
+      return ;
+    }
+  }
+  /// Accept Student Profile User Invitation
+  ///
+  /// 
+  Future apiAuthV1StudentProfileUserInvitationStudentProfileUserInvitationIdAcceptPost() async {
+    Object postBody = null;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/api/auth/v1/student-profile-user-invitation/{studentProfileUserInvitationId}/accept".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["apiKey"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return
+          ;
+    } else {
+      return ;
+    }
+  }
+  /// Reject Student Profile User Invitation
+  ///
+  /// 
+  Future apiAuthV1StudentProfileUserInvitationStudentProfileUserInvitationIdRejectPost() async {
+    Object postBody = null;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/api/auth/v1/student-profile-user-invitation/{studentProfileUserInvitationId}/reject".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["apiKey"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'POST',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return
+          ;
+    } else {
+      return ;
+    }
+  }
+  /// Retrieves the collection of StudentProfileUserInvitation resources.
+  ///
+  /// 
+  Future<InlineResponse20010> getStudentProfileUserInvitationCollection({ int teachingClassId, List<int> teachingClassId[], int studentId, List<int> studentId[], int page, int itemsPerPage }) async {
+    Object postBody = null;
+
+    // verify required params are set
+
+    // create path and map variables
+    String path = "/api/auth/v1/student-profile-user-invitations".replaceAll("{format}","json");
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    if(teachingClassId != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "teaching_class.id", teachingClassId));
+    }
+    if(teachingClassId[] != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "teaching_class.id[]", teachingClassId[]));
+    }
+    if(studentId != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "student.id", studentId));
+    }
+    if(studentId[] != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("multi", "student.id[]", studentId[]));
+    }
+    if(page != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "page", page));
+    }
+    if(itemsPerPage != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat("", "itemsPerPage", itemsPerPage));
+    }
+    
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["apiKey"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return
+          apiClient.deserialize(response.body, 'InlineResponse20010') as InlineResponse20010 ;
+    } else {
+      return null;
+    }
+  }
+  /// Retrieves a StudentProfileUserInvitation resource.
+  ///
+  /// 
+  Future<StudentProfileUserInvitation:jsonldStudentProfileUserInvitationDetail> getStudentProfileUserInvitationItem(String id) async {
+    Object postBody = null;
+
+    // verify required params are set
+    if(id == null) {
+     throw new ApiException(400, "Missing required param: id");
+    }
+
+    // create path and map variables
+    String path = "/api/auth/v1/student-profile-user-invitation/{id}".replaceAll("{format}","json").replaceAll("{" + "id" + "}", id.toString());
+
+    // query params
+    List<QueryParam> queryParams = [];
+    Map<String, String> headerParams = {};
+    Map<String, String> formParams = {};
+    
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = ["apiKey"];
+
+    if(contentType.startsWith("multipart/form-data")) {
+      bool hasFields = false;
+      MultipartRequest mp = new MultipartRequest(null, null);
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+          }
+
+    var response = await apiClient.invokeAPI(path,
+                                             'GET',
+                                             queryParams,
+                                             postBody,
+                                             headerParams,
+                                             formParams,
+                                             contentType,
+                                             authNames);
+
+    if(response.statusCode >= 400) {
+      throw new ApiException(response.statusCode, response.body);
+    } else if(response.body != null) {
+      return
+          apiClient.deserialize(response.body, 'StudentProfileUserInvitation:jsonldStudentProfileUserInvitationDetail') as StudentProfileUserInvitation:jsonldStudentProfileUserInvitationDetail ;
+    } else {
+      return null;
+    }
+  }
+}
